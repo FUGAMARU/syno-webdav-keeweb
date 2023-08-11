@@ -30,7 +30,7 @@ All credits go to Vincent Lamouroux (@skad). You can find his original posting h
 # navigate to the shared folder
 cd /volume1/sysadmin
 # clone the following repo
-git clone https://github.com/alexanderharm/syno-webdav-keeweb
+git clone https://github.com/FUGAMARU/syno-webdav-keeweb.git
 # to enable autoupdate
 touch syno-webdav-keeweb/autoupdate
 ```
@@ -67,5 +67,5 @@ Frequency:                 Every 1 hour(s)
 Last run time:			   23:00
 
 # Task Settings
-User-defined script: /volume1/sysadmin/syno-webdav-keeweb/synoWebdavKeeweb.sh"
+User-defined script: /volume1/sysadmin/syno-webdav-keeweb/synoWebdavKeeweb.sh
 ```
