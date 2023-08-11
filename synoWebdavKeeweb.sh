@@ -82,12 +82,12 @@ if ! grep -q 'Header always set Access-Control-Expose-Headers "ETag"' "/var/pack
 	sed -i 's|    Header always set Access-Control-Allow-Headers "origin, content-type, cache-control, accept, authorization, if-match, destination, overwrite, depth"|&\n    Header always set Access-Control-Expose-Headers "ETag"|' "/var/packages/WebDAVServer/target/etc/httpd/conf/extra/httpd-ssl.conf-webdav"
 	((serviceRestart++))
 fi
-if ! grep -q 'Header always set Access-Control-Allow-Methods "GET, HEAD, POST, PUT, OPTIONS, MOVE, DELETE, COPY, LOCK, UNLOCK"' "/var/packages/WebDAVServer/target/etc/httpd/conf/extra/httpd-ssl.conf-webdav"; then
-	sed -i 's|    Header always set Access-Control-Expose-Headers "ETag"|&\n    Header always set Access-Control-Allow-Methods "GET, HEAD, POST, PUT, OPTIONS, MOVE, DELETE, COPY, LOCK, UNLOCK"|' "/var/packages/WebDAVServer/target/etc/httpd/conf/extra/httpd-ssl.conf-webdav"
+if ! grep -q 'Header always set Access-Control-Allow-Methods "GET, HEAD, POST, PUT, PROPFIND, OPTIONS, MOVE, DELETE, COPY, LOCK, UNLOCK"' "/var/packages/WebDAVServer/target/etc/httpd/conf/extra/httpd-ssl.conf-webdav"; then
+	sed -i 's|    Header always set Access-Control-Expose-Headers "ETag"|&\n    Header always set Access-Control-Allow-Methods "GET, HEAD, POST, PUT, PROPFIND, OPTIONS, MOVE, DELETE, COPY, LOCK, UNLOCK"|' "/var/packages/WebDAVServer/target/etc/httpd/conf/extra/httpd-ssl.conf-webdav"
 	((serviceRestart++))
 fi
 if ! grep -q 'Header always set Access-Control-Allow-Credentials "true"' "/var/packages/WebDAVServer/target/etc/httpd/conf/extra/httpd-ssl.conf-webdav"; then
-	sed -i 's|    Header always set Access-Control-Allow-Methods "GET, HEAD, POST, PUT, OPTIONS, MOVE, DELETE, COPY, LOCK, UNLOCK"|&\n    Header always set Access-Control-Allow-Credentials "true"|' "/var/packages/WebDAVServer/target/etc/httpd/conf/extra/httpd-ssl.conf-webdav"
+	sed -i 's|    Header always set Access-Control-Allow-Methods "GET, HEAD, POST, PUT, PROPFIND, OPTIONS, MOVE, DELETE, COPY, LOCK, UNLOCK"|&\n    Header always set Access-Control-Allow-Credentials "true"|' "/var/packages/WebDAVServer/target/etc/httpd/conf/extra/httpd-ssl.conf-webdav"
 	((serviceRestart++))
 fi
 
